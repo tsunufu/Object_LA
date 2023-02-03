@@ -5,9 +5,12 @@ using UnityEngine.UI;
 
 public abstract class Friendly : MonoBehaviour
 {
+
     public Text hpText;
     public GameManager gameManager;
     public int hp;
+    private int mp;
+    public float attackPower;
 
     /// <summary>
     /// Textへhpの値を反映させるメソッド
@@ -16,4 +19,10 @@ public abstract class Friendly : MonoBehaviour
     {
         hpText.text = "HP: " + hp.ToString();
     }
+
+    public abstract void AddDamage(int damage);
+
+    public abstract void OnAttack();
+
+    public abstract void OnSpSkill();
 }

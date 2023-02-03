@@ -262,6 +262,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boss: {fileID: 1717317802}
+  player: {fileID: 1063367903}
+  healer: {fileID: 1025426272}
 --- !u!1 &78586138
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,7 +605,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 264159119}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1063367903}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &264159119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1219,7 +1233,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 872276492}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1063367903}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnSpSkill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &872276492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1543,6 +1569,7 @@ GameObject:
   - component: {fileID: 1025426270}
   - component: {fileID: 1025426269}
   - component: {fileID: 1025426268}
+  - component: {fileID: 1025426272}
   m_Layer: 0
   m_Name: Healer
   m_TagString: Untagged
@@ -1627,6 +1654,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1025426272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025426267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b805f9df4e5b46f5bc8d8a809d1a703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpText: {fileID: 808113392}
+  gameManager: {fileID: 52372675}
+  hp: 100
+  attackPower: 0.5
 --- !u!1 &1063367898
 GameObject:
   m_ObjectHideFlags: 0
@@ -1639,6 +1682,7 @@ GameObject:
   - component: {fileID: 1063367901}
   - component: {fileID: 1063367900}
   - component: {fileID: 1063367899}
+  - component: {fileID: 1063367903}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1723,6 +1767,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1063367903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063367898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0542ace064f644a64823d894f41f2602, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpText: {fileID: 5628000}
+  gameManager: {fileID: 52372675}
+  hp: 100
+  attackPower: 0.5
 --- !u!1 &1092601410
 GameObject:
   m_ObjectHideFlags: 0
@@ -2168,7 +2228,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1680976201}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1025426272}
+        m_TargetAssemblyTypeName: Healer, Assembly-CSharp
+        m_MethodName: OnSpSkill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1680976201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2431,7 +2503,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1846355733}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1717317802}
+        m_TargetAssemblyTypeName: EnemyBoss, Assembly-CSharp
+        m_MethodName: OnAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1846355733
 MonoBehaviour:
   m_ObjectHideFlags: 0

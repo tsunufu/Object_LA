@@ -8,6 +8,7 @@ public class EnemyBoss : MonoBehaviour
     public int hp = 300;
     [SerializeField] Text hpText;
     public GameManager gameManager;
+    private int damage;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,6 @@ public class EnemyBoss : MonoBehaviour
     public void OnAttack()
     {
         Debug.Log("ボスの攻撃！");
-        gameManager.OnPlayersDamage();
+        gameManager.OnPlayersDamage(damage);
     }
 }

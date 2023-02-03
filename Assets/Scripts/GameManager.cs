@@ -5,8 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public EnemyBoss boss;
-    // public Player player;
-    // public Healer healer;
+    public Player player;
+    public Healer healer;
 
     /// <summary>
     /// Enemyが攻撃を受けた際に実行する処理
@@ -19,9 +19,10 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Playerが攻撃を受けた際に実行する処理
     /// </summary>
-    public void OnPlayersDamage()
+    public void OnPlayersDamage(int damage)
     {
-
+        player.AddDamage(damage);
+        healer.AddDamage(damage);
     }
 
     /// <summary>
@@ -29,7 +30,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void OnPlayerHeal()
     {
-
+        player.AddHP();
     }
 
     //以下ボタンで押された際の処理
@@ -38,7 +39,8 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void OnPlayersAttack()
     {
-
+        player.OnAttack();
+        healer.OnAttack();
     }
 
     /// <summary>
@@ -46,7 +48,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void OnEnemyAttack()
     {
-
+        boss.OnAttack();
     }
 
     /// <summary>
@@ -54,7 +56,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void OnPlayerSpSkill()
     {
-
+        player.OnSpSkill();
     }
 
     /// <summary>
@@ -62,6 +64,6 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void OnHealerSpSkill()
     {
-
+        healer.OnSpSkill();
     }
 }
